@@ -53,3 +53,11 @@ footer {
   padding-top: 20px;
   border-top: 1px solid #ccc;
 }
+
+canvas#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  display: block;
+}
