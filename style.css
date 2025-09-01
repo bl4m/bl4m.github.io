@@ -7,20 +7,17 @@
 body {
   font-family: sans-serif;
   line-height: 1.6;
-  background: #f4f4f4;
   color: #333;
+}
+
+header, section, footer {
   padding: 20px;
 }
 
 header {
   background: #222;
   color: #fff;
-  padding: 20px 0;
   text-align: center;
-}
-
-header h1 {
-  margin-bottom: 10px;
 }
 
 nav a {
@@ -31,10 +28,6 @@ nav a {
 
 nav a:hover {
   text-decoration: underline;
-}
-
-section {
-  margin: 40px 0;
 }
 
 h2 {
@@ -55,10 +48,8 @@ footer {
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 canvas#bg {
