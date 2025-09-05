@@ -20,15 +20,9 @@
     <canvas id="bg" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
 
     <!-- Header -->
-    <header
-      class="backdrop-blur-md bg-gray-800/70 sticky top-0 z-30 shadow-lg"
-    >
-      <div
-        class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center"
-      >
-        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">
-          Hardik Trikha
-        </h1>
+    <header class="backdrop-blur-md bg-gray-800/70 sticky top-0 z-30 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight">Hardik Trikha</h1>
         <nav class="space-x-4 text-sm md:text-base">
           <a href="#about" class="hover:text-blue-400">About</a>
           <a href="#projects" class="hover:text-blue-400">Projects</a>
@@ -40,7 +34,7 @@
     <!-- Hero -->
     <section
       class="w-full h-[80vh] bg-cover bg-center flex items-center justify-center text-center px-4"
-      style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085');"
+      style="background-image: url('static/images/hero.jpg');"
     >
       <div data-aos="fade-up" class="bg-black/60 p-8 rounded-lg">
         <h2 class="text-4xl md:text-5xl font-bold mb-4">Welcome to my world</h2>
@@ -56,12 +50,10 @@
       <section id="about" data-aos="fade-up" class="text-center space-y-6">
         <h2 class="text-4xl font-semibold">About Me</h2>
         <p class="text-lg text-gray-300 leading-relaxed max-w-3xl mx-auto">
-          I'm a developer focused on AI, physics simulations, and interactive
-          systems. I build projects that blur the line between intelligence and
-          creativity. My work explores computation, cognition, and control.
+          I'm a developer focused on AI, physics simulations, and interactive systems. I build projects that blur the line between intelligence and creativity. My work explores computation, cognition, and control.
         </p>
         <img
-          src="https://avatars.githubusercontent.com/u/9919?s=200&v=4"
+          src="static/images/profile.jpg"
           alt="Profile"
           class="w-32 h-32 rounded-full mx-auto border-4 border-blue-500"
         />
@@ -69,67 +61,49 @@
 
       <!-- Projects -->
       <section id="projects" class="space-y-10">
-        <h2
-          class="text-4xl font-semibold text-center"
-          data-aos="fade-up"
-        >
-          Projects
-        </h2>
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 gap-8"
-          data-aos="fade-up"
-          data-aos-delay="200"
-        >
+        <h2 class="text-4xl font-semibold text-center" data-aos="fade-up">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="200">
           <!-- Project 1 -->
-          <div
-            class="bg-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 transition transform duration-300"
-          >
+          <div class="bg-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 transition transform duration-300">
             <img
-              src="https://images.unsplash.com/photo-1581093588401-5f8232f85f3b"
+              src="static/images/ai-assistant.jpg"
               class="w-full h-48 object-cover"
               alt="AI Assistant"
             />
             <div class="p-5 space-y-2">
               <h3 class="text-xl font-bold">AI Assistant</h3>
               <p class="text-gray-300">
-                Memory-based assistant built with Flask + GPT-4 for persistent
-                intelligent conversations.
+                Memory-based assistant built with Flask + GPT-4 for persistent intelligent conversations.
               </p>
             </div>
           </div>
 
           <!-- Project 2 -->
-          <div
-            class="bg-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 transition transform duration-300"
-          >
+          <div class="bg-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 transition transform duration-300">
             <img
-              src="https://images.unsplash.com/photo-1555949963-aa79dcee981d"
+              src="static/images/physics-engine.jpg"
               class="w-full h-48 object-cover"
               alt="Physics Engine"
             />
             <div class="p-5 space-y-2">
               <h3 class="text-xl font-bold">Physics Engine</h3>
               <p class="text-gray-300">
-                Real-time particle simulation using gravitational and
-                electrostatic forces.
+                Real-time particle simulation using gravitational and electrostatic forces.
               </p>
             </div>
           </div>
 
           <!-- Project 3 -->
-          <div
-            class="bg-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 transition transform duration-300"
-          >
+          <div class="bg-gray-800 rounded-xl overflow-hidden shadow-md hover:scale-105 transition transform duration-300">
             <img
-              src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8"
+              src="static/images/game-clone.jpg"
               class="w-full h-48 object-cover"
               alt="Game Clone"
             />
             <div class="p-5 space-y-2">
               <h3 class="text-xl font-bold">Game Clone</h3>
               <p class="text-gray-300">
-                A racing game prototype built in Godot with UI, camera, and
-                physics.
+                A racing game prototype built in Godot with UI, camera, and physics.
               </p>
             </div>
           </div>
@@ -140,19 +114,10 @@
       <section id="contact" class="text-center space-y-6" data-aos="fade-up">
         <h2 class="text-4xl font-semibold">Contact</h2>
         <p>
-          <a
-            href="mailto:hardik@example.com"
-            class="text-blue-400 hover:underline"
-          >
-            hardik@example.com
-          </a>
+          <a href="mailto:hardik@example.com" class="text-blue-400 hover:underline">hardik@example.com</a>
         </p>
         <p>
-          <a
-            href="https://github.com/yourusername"
-            target="_blank"
-            class="text-blue-400 hover:underline"
-          >
+          <a href="https://github.com/yourusername" target="_blank" class="text-blue-400 hover:underline">
             GitHub: yourusername
           </a>
         </p>
@@ -168,11 +133,7 @@
     <script src="background.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-      AOS.init({
-        once: true,
-        duration: 800,
-        offset: 50,
-      });
+      AOS.init({ once: true, duration: 800, offset: 50 });
     </script>
   </body>
 </html>
