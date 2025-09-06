@@ -19,6 +19,9 @@ const moonImg = new Image();
 sunImg.src = '/static/images/sun.png';
 earthImg.src = '/static/images/earth.jpg';
 moonImg.src = '/static/images/moon.jpg';
+sunImg.onerror = () => console.error("Failed to load sun.png");
+earthImg.onerror = () => console.error("Failed to load earth.jpg");
+moonImg.onerror = () => console.error("Failed to load moon.jpg");
 
 let angleEarth = 0;
 let angleMoon = 0;
