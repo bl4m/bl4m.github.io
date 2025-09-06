@@ -1,5 +1,7 @@
-const canvas = document.getElementById('solarCanvas');
-const ctx = canvas.getContext('2d');
+const solarCanvas = document.getElementById('solarCanvas');
+const solarCtx = solarCanvas.getContext('2d');
+// draw orbits, etc...
+
 
 let width, height;
 let centerX, centerY;
@@ -31,28 +33,28 @@ const speedEarth = 0.01;  // radians per frame
 const speedMoon = 0.05;
 
 function drawOrbit(x, y, r) {
-  ctx.beginPath();
-  ctx.strokeStyle = 'rgba(0,0,0,0.2)';
-  ctx.lineWidth = 1;
-  ctx.arc(x, y, r, 0, 2 * Math.PI);
-  ctx.stroke();
+  solarCtx.beginPath();
+  solarCtx.strokeStyle = 'rgba(0,0,0,0.2)';
+  solarCtx.lineWidth = 1;
+  solarCtx.arc(x, y, r, 0, 2 * Math.PI);
+  solarCtx.stroke();
 }
 
 function draw() {
-  ctx.clearRect(0, 0, width, height);
+  solarCtx.clearRect(0, 0, width, height);
 
   // Draw orbits
   drawOrbit(centerX, centerY, earthOrbitRadius);
 
   // Sun at center
   const sunSize = 60;
-  ctx.drawImage(sunImg, centerX - sunSize/2, centerY - sunSize/2, sunSize, sunSize);
+  solarCtx.drawImage(sunImg, centerX - sunSize/2, centerY - sunSize/2, sunSize, sunSize);
 
   // Earth
   const earthX = centerX + Math.cos(angleEarth) * earthOrbitRadius;
   const earthY = centerY + Math.sin(angleEarth) * earthOrbitRadius;
   const earthSize = 30;
-  ctx.drawImage(earthImg, earthX - earthSize/2, earthY - earthSize/2, earthSize, earthSize);
+  solarCtx.drawImage(earthImg, earthX - earthSize/2, earthY - earthSize/2, earthSize, earthSize);
 
   // Earth's orbit path for Moon
   drawOrbit(earthX, earthY, moonOrbitRadius);
@@ -61,7 +63,7 @@ function draw() {
   const moonX = earthX + Math.cos(angleMoon) * moonOrbitRadius;
   const moonY = earthY + Math.sin(angleMoon) * moonOrbitRadius;
   const moonSize = 15;
-  ctx.drawImage(moonImg, moonX - moonSize/2, moonY - moonSize/2, moonSize, moonSize);
+  solarCtx.drawImage(moonImg, moonX - moonSize/2, moonY - moonSize/2, moonSize, moonSize);
 
   // Update angles
   angleEarth += speedEarth;
