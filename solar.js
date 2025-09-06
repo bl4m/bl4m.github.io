@@ -17,7 +17,7 @@ const sunImg = new Image();
 const earthImg = new Image();
 const moonImg = new Image();
 sunImg.src = 'static/images/sun.png';
-earthImg.src = 'static/images/earth.png';
+earthImg.src = 'static/images/earth.jpg';
 moonImg.src = 'static/images/moon.jpg';
 
 let angleEarth = 0;
