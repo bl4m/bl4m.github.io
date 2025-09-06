@@ -1,5 +1,5 @@
-const canvas = document.getElementById('bg');
-const ctx = canvas.getContext('2d');
+const bgCanvas = document.getElementById('bg');
+const bgCtx = bgCanvas.getContext('2d');
 
 let w, h;
 let particles = [];
@@ -8,12 +8,12 @@ const maxDist = 120;
 
 const mouse = { x: null, y: null };
 
-function resize() {
-  w = canvas.width = window.innerWidth;
-  h = canvas.height = window.innerHeight;
+function resizeBackground() {
+  w = bgCanvas.width = window.innerWidth;
+  h = bgCanvas.height = window.innerHeight;
 }
-window.addEventListener('resize', resize);
-resize();
+window.addEventListener('resize', resizeBackground);
+resizeBackground();
 
 document.addEventListener('mousemove', e => {
   mouse.x = e.clientX;
@@ -31,18 +31,16 @@ class Particle {
   reset() {
     this.x = Math.random() * w;
     this.y = Math.random() * h;
-    this.vx = (Math.random() - 0.5) * 1;
-    this.vy = (Math.random() - 0.5) * 1;
+    this.vx = (Math.random() - 0.5);
+    this.vy = (Math.random() - 0.5);
   }
   update() {
     this.x += this.vx;
     this.y += this.vy;
 
-    // bounce off edges
     if (this.x <= 0 || this.x >= w) this.vx *= -1;
     if (this.y <= 0 || this.y >= h) this.vy *= -1;
 
-    // repel from mouse
     if (mouse.x !== null) {
       const dx = this.x - mouse.x;
       const dy = this.y - mouse.y;
@@ -55,15 +53,14 @@ class Particle {
       }
     }
 
-    // velocity damping
     this.vx *= 0.95;
     this.vy *= 0.95;
   }
   draw() {
-    ctx.beginPath();
-    ctx.arc(this.x, this.y, 2, 0, Math.PI * 2);
-    ctx.fillStyle = '#aaa';
-    ctx.fill();
+    bgCtx.beginPath();
+    bgCtx.arc(this.x, this.y, 2, 0, Math.PI * 2);
+    bgCtx.fillStyle = '#aaa';
+    bgCtx.fill();
   }
 }
 
@@ -77,16 +74,16 @@ function connect(p1, p2) {
   const dist = dx * dx + dy * dy;
   if (dist < maxDist * maxDist) {
     const alpha = 1 - dist / (maxDist * maxDist);
-    ctx.strokeStyle = `rgba(170,170,170,${alpha})`;
-    ctx.beginPath();
-    ctx.moveTo(p1.x, p1.y);
-    ctx.lineTo(p2.x, p2.y);
-    ctx.stroke();
+    bgCtx.strokeStyle = `rgba(170,170,170,${alpha})`;
+    bgCtx.beginPath();
+    bgCtx.moveTo(p1.x, p1.y);
+    bgCtx.lineTo(p2.x, p2.y);
+    bgCtx.stroke();
   }
 }
 
-function animate() {
-  ctx.clearRect(0, 0, w, h);
+function animateBackground() {
+  bgCtx.clearRect(0, 0, w, h);
 
   for (const p of particles) {
     p.update();
@@ -99,6 +96,6 @@ function animate() {
     }
   }
 
-  requestAnimationFrame(animate);
+  requestAnimationFrame(animateBackground);
 }
-animate();
+animateBackground();
