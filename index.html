@@ -1,83 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Canvas Test</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-    }
-    #solarCanvas {
-      display: block;
-      width: 100vw;
-      height: 100vh;
-    }
-  </style>
-</head>
-<body>
-  <canvas id="solarCanvas"></canvas>
-  <script>
-    const solarCanvas = document.getElementById('solarCanvas');
-    const solarCtx = solarCanvas.getContext('2d');
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardik Trikha - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <style>
+      body::-webkit-scrollbar {
+        width: 8px;
+      }
+      body::-webkit-scrollbar-thumb {
+        background: #cbd5e1;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body class="bg-[#fdfdfd] text-gray-900 font-serif relative">
+    <canvas id="bg" class="fixed top-0 left-0 w-full h-full -z-10"></canvas>
 
-    function resize() {
-      solarCanvas.width = window.innerWidth;
-      solarCanvas.height = window.innerHeight;
-    }
-    window.addEventListener('resize', resize);
-    resize();
+    <!-- Header -->
+    <header class="backdrop-blur-md bg-white/70 sticky top-0 z-30 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 py-5 flex justify-between items-center">
+        <h1 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-800">Hardik Trikha</h1>
+        <nav class="space-x-4 text-sm md:text-base text-gray-700">
+          <a href="#about" class="hover:text-yellow-600">About</a>
+          <a href="#projects" class="hover:text-yellow-600">Projects</a>
+          <a href="#contact" class="hover:text-yellow-600">Contact</a>
+        </nav>
+      </div>
+    </header>
 
-    let angleEarth = 0;
-    let angleMoon = 0;
-    const earthOrbitRadius = 150;
-    const moonOrbitRadius = 40;
+    <!-- Hero -->
+    <!-- Hero -->
+<section class="w-full h-[80vh] relative overflow-hidden flex items-center justify-center text-center px-4 bg-white">
+  <canvas id="solarCanvas" class="absolute inset-0 w-full h-full z-0"></canvas><!--
+  <div data-aos="fade-up" class="relative z-10 bg-white/80 p-8 rounded-lg shadow-xl border border-gray-300">
+    <h2 class="text-4xl md:text-5xl font-bold mb-4 text-gray-800">The Harmony of Code and Cosmos</h2>
+    <p class="text-lg md:text-xl text-gray-600">
+      AI, Simulations, and Thought Experiments
+    </p>
+  </div>-->
+</section>
 
-    function drawDot(x, y, r, color) {
-      solarCtx.beginPath();
-      solarCtx.arc(x, y, r, 0, 2 * Math.PI);
-      solarCtx.fillStyle = color;
-      solarCtx.fill();
-    }
+    <!-- Main -->
+    <main class="max-w-5xl mx-auto px-4 py-16 space-y-24">
+      <!-- About -->
+      <section id="about" data-aos="fade-up" class="text-center space-y-6">
+        <h2 class="text-4xl font-semibold text-gray-800">About Me</h2>
+        <p class="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          I'm a developer focused on AI, physics simulations, and interactive systems. My work explores the intersection of logic and philosophy — inspired by both circuits and Socrates.
+        </p>
+        <img
+          src="static/images/profile.jpg"
+          alt="Profile"
+          class="w-32 h-32 rounded-full mx-auto border-4 border-yellow-500"
+        />
+      </section>
 
-    function drawOrbit(x, y, r) {
-      solarCtx.beginPath();
-      solarCtx.arc(x, y, r, 0, 2 * Math.PI);
-      solarCtx.strokeStyle = '#999';
-      solarCtx.stroke();
-    }
+      <!-- Projects -->
+      <section id="projects" class="space-y-10">
+        <h2 class="text-4xl font-semibold text-center text-gray-800" data-aos="fade-up">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" data-aos="fade-up" data-aos-delay="200">
+          <!-- Project 1 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md border hover:scale-105 transition transform duration-300">
+            <img
+              src="static/images/ai-assistant.jpg"
+              class="w-full h-48 object-cover"
+              alt="AI Assistant"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-xl font-bold text-gray-800">AI Assistant</h3>
+              <p class="text-gray-600">
+                Memory-based assistant built with Flask + LLama + RAG for persistent intelligent conversations.
+              </p>
+            </div>
+          </div>
 
-    function draw() {
-      const w = solarCanvas.width;
-      const h = solarCanvas.height;
-      const cx = w / 2;
-      const cy = h / 2;
+          <!-- Project 2 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md border hover:scale-105 transition transform duration-300">
+            <img
+              src="static/images/website.jpg"
+              class="w-full h-48 object-cover"
+              alt="Website"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-xl font-bold text-gray-800">Website</h3>
+              <p class="text-gray-600">
+                Interactive website using HTML, Tailwind, and minimalism with purpose.
+              </p>
+            </div>
+          </div>
 
-      solarCtx.clearRect(0, 0, w, h);
+          <!-- Project 3 -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-md border hover:scale-105 transition transform duration-300">
+            <img
+              src="static/images/game.png"
+              class="w-full h-48 object-cover"
+              alt="game"
+            />
+            <div class="p-5 space-y-2">
+              <h3 class="text-xl font-bold text-gray-800">Game</h3>
+              <p class="text-gray-600">
+                A racing game prototype built in Godot with UI, camera, and physics — simulation with soul.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      drawOrbit(cx, cy, earthOrbitRadius);
-      drawDot(cx, cy, 10, 'orange'); // Sun
+      <!-- Contact -->
+      <section id="contact" class="text-center space-y-6" data-aos="fade-up">
+        <h2 class="text-4xl font-semibold text-gray-800">Contact</h2>
+        <p>
+          <a href="mailto:hardik@example.com" class="text-yellow-600 hover:underline">hardik@example.com</a>
+        </p>
+        <p>
+          <a href="https://github.com/yourusername" target="_blank" class="text-yellow-600 hover:underline">
+            GitHub: yourusername
+          </a>
+        </p>
+      </section>
+    </main>
 
-      const ex = cx + Math.cos(angleEarth) * earthOrbitRadius;
-      const ey = cy + Math.sin(angleEarth) * earthOrbitRadius;
-      drawDot(ex, ey, 6, 'blue'); // Earth
+    <!-- Footer -->
+    <footer class="bg-white text-center py-6 border-t">
+      <p class="text-gray-500 text-sm">&copy; 2025 Hardik Trikha</p>
+    </footer>
 
-      drawOrbit(ex, ey, moonOrbitRadius);
-
-      const mx = ex + Math.cos(angleMoon) * moonOrbitRadius;
-      const my = ey + Math.sin(angleMoon) * moonOrbitRadius;
-      drawDot(mx, my, 3, 'gray'); // Moon
-
-      angleEarth += 0.01;
-      angleMoon += 0.05;
-
-      requestAnimationFrame(draw);
-    }
-
-    draw();
-  </script>
-</body>
+    <!-- Scripts -->
+    <script src="background.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="solar.js"></script>
+    <script>
+      AOS.init({ once: true, duration: 800, offset: 50 });
+    </script>
+  </body>
 </html>
