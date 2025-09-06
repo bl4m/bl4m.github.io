@@ -25,6 +25,16 @@ sunImg.onerror = () => console.error("Failed to load sun.png");
 earthImg.onerror = () => console.error("Failed to load earth.jpg");
 moonImg.onerror = () => console.error("Failed to load moon.jpg");
 
+sunImg.onload = () => {
+  console.log('loaded', sunImg.src);
+}
+earthImg.onload = () => {
+  console.log('loaded', earthImg.src);
+}
+moonImg.onload = () => {
+  console.log('loaded', moonImg.src);
+}
+
 let angleEarth = 0;
 let angleMoon = 0;
 const earthOrbitRadius = 150;
