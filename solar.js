@@ -13,6 +13,9 @@ function resizeSolarCanvas() {
 window.addEventListener('resize', resizeSolarCanvas);
 resizeSolarCanvas();
 
+solarCtx.fillStyle = "red";
+solarCtx.fillRect(10, 10, 100, 100);
+
 // Orbital values
 let angleEarth = 0;
 let angleMoon = 0;
