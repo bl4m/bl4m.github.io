@@ -41,6 +41,10 @@ function drawOrbit(x, y, r) {
 function drawSolarSystem() {
   solarCtx.clearRect(0, 0, width, height);
 
+  // DEBUG: Test square (will persist)
+  solarCtx.fillStyle = "red";
+  solarCtx.fillRect(10, 10, 100, 100);
+
   // Orbits
   drawOrbit(centerX, centerY, earthOrbitRadius);
 
@@ -65,5 +69,6 @@ function drawSolarSystem() {
 
   requestAnimationFrame(drawSolarSystem);
 }
+
 
 drawSolarSystem();
